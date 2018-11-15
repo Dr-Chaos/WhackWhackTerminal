@@ -123,6 +123,12 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="winpty\x64\winpty-agent.exe" />
+    <Content Include="winpty\x64\winpty-debugserver.exe" />
+    <Content Include="winpty\x64\winpty.dll" />
+    <Content Include="winpty\x86\winpty-agent.exe" />
+    <Content Include="winpty\x86\winpty-debugserver.exe" />
+    <Content Include="winpty\x86\winpty.dll" />
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -296,6 +302,9 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Pty.Net, Version=0.1.0.0, Culture=neutral, PublicKeyToken=b4c202890a4b44e2, processorArchitecture=MSIL">
+      <HintPath>..\packages\Pty.Net.0.1.15-pre-g678ce7534b\lib\net46\Pty.Net.dll</HintPath>
+    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
@@ -315,6 +324,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="winpty.NET, Version=0.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\winpty.NET.0.4.2\lib\net40\winpty.NET.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <SuppressFromVsix Include="Microsoft.ServiceHub.Client.dll">

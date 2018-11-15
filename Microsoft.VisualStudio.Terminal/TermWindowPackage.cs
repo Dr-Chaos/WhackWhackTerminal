@@ -76,15 +76,9 @@ namespace Microsoft.VisualStudio.Terminal
 
         internal async Task<EmbeddedTerminal> CreateTerminalAsync(EmbeddedTerminalOptions options, TermWindowPane pane)
         {
-            var rpcStreamTask = JoinableTaskFactory.RunAsync(async () =>
-            {
-                var client = new HubClient();
-                return await client.RequestServiceAsync("wwt.pty", DisposalToken);
-            });
-
             pane = pane ?? await CreateToolWindowAsync(options.Name);
 
-            var result = new EmbeddedTerminal(this, pane, options, rpcStreamTask.Task);
+            var result = new EmbeddedTerminal(this, pane, options);
             await result.InitAsync(DisposalToken);
             return result;
         }
